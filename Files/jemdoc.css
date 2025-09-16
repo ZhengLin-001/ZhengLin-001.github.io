@@ -479,19 +479,15 @@ table.imgtable, table.imgtable td {
 
 /* Publication */
 p.pub_title {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 4px;
 }
 
 p.pub_author{
-	font-size: 20px;
+	font-size: 14px	
 }
 
 p.pub_link{
-	font-size: 20px;
+	font-size: 14px	
 }
-
-
-
-
