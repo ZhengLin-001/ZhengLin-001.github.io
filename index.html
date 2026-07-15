@@ -186,52 +186,37 @@ Email: linzheng@eee.hku.hk [<a href="https://scholar.google.com/citations?user=b
  
 
 <A NAME="Visitors"><h2 style="font-size: 25px;"><font color="#483D8B">Visitor</font></h2></A>
-<style>
-  #clustrmaps-container {
-    max-width: 200px;
-    max-height: 200px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
 
-  #clustrmaps-container canvas {
-    width: 15% !important;
-    height: auto !important;
-  }
-</style>
-
-<div id="clustrmaps-container">
-  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=D6dnDu-6rCbUbmtUqEGmJYpj8w17YBfF1S0SjeqNRGQ"></script>
+ 
+<!-- Visitor Section Start -->
+<div align="center" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 style="font-size: 20px; color: #483D8B; font-weight: bold; margin-bottom: 15px;">Visitor Statistics</h2>
+    
+    <!-- 极简数字徽章 (使用了你的 GitHub ID) -->
+    <img src="https://komarev.com/ghpvc/?username=zhenglin-001&label=Total%20Views&color=483D8B&style=flat-square" alt="Visitor Count" style="margin-bottom: 15px;" />
+    
+    <!-- ClustrMaps 地球图静态版 (加载更快，不依赖 JS 脚本，防止失效) -->
+    <a href="https://clustrmaps.com/site/1b9z8" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=D6dnDu-6rCbUbmtUqEGmJYpj8w17YBfF1S0SjeqNRGQ&cl=ffffff" alt="Visitor Map" style="width: 200px; height: auto;" /></a>
 </div>
+<!-- Visitor Section End -->
 
-
+<!-- 纯原生 JS 返回顶部按钮 (无需 jQuery) -->
+<button id="back_top" style="display:none; position:fixed; bottom:30px; right:30px; width:40px; height:40px; background-color:#483D8B; color:white; border:none; border-radius:5px; cursor:pointer; opacity:0.8; font-size: 18px;">↑</button>
 
 <script>
-$(function(){
-
-    $(window).scroll(function(){  //If scroll
-
-        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //Getting Height after scroll
-
-        if( scrollt >400 ){  
-
-            $("#back_top").fadeIn(400); 
-
-        }else{
-
-            $("#back_top").stop().fadeOut(400);
-
+    // 使用原生 JavaScript 替代 jQuery，确保绝对不会报错
+    window.onscroll = function() {
+        var backTopBtn = document.getElementById("back_top");
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            backTopBtn.style.display = "block";
+        } else {
+            backTopBtn.style.display = "none";
         }
+    };
 
-    });
-
-    $("#back_top").click(function(){ 
-
-        $("html,body").animate({scrollTop:"0px"}, 200);
-
-    }); 
-
-});
+    document.getElementById("back_top").onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 </script>
 
 
